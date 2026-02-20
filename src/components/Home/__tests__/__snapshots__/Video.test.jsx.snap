@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Tests Pexels API call > renders video after fetch 1`] = `
+<div>
+  <div
+    class=""
+  >
+    <video
+      autoplay=""
+      data-testid="video-element"
+      loop=""
+      playsinline=""
+      src="https://test-video-link.com/video.mp4"
+      style="width: 100%; height: 100%; object-fit: cover;"
+      width="100%"
+    />
+  </div>
+</div>
+`;
+
+exports[`Tests Pexels API call > shows loading first 1`] = `
+<div>
+  Loading video...
+</div>
+`;

@@ -32,6 +32,7 @@ const Video = ({ className = "" }) => {
   return (
     <div className={className}>
       <video
+        data-testid="video-element"
         src={video.video_files[0].link}
         autoPlay
         muted
