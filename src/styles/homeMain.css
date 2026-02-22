@@ -1,20 +1,30 @@
-.clip-left {
-  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
-  border: none;
-  z-index: 999;
-}
-
-.clip-right {
-  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
-}
-
-.homeMain {
-  background-color: black;
-  height: 100%;
-}
+@import "./fontsStyles.css";
 
 #root {
   display: flex;
   flex-direction: column;
   height: 100vh;
+}
+
+.homeMain {
+  background-color: black;
+  height: 100%;
+  display: flex;
+  flex: 1;
+}
+
+.clip-left {
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+  border: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.clip-right h1 {
+  font-family: "nike";
+  font-size: 2.7em;
+}
+
+button {
+  font-family: "robotoBtns";
 }

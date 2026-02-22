@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "marvel";
+  src: url("./fonts/Marvel-Regular/Marvel-Regular.ttf");
+}
+
+@font-face {
+  font-family: "nike";
+  src: url("./fonts/nike-logo-font/Futura\ Std\ Extra\ Bold\ Condensed.ttf");
+}
+
+@font-face {
+  font-family: "robotoBtns";
+  src: url("./fonts/fonts/Roboto-SemiBold.ttf");
+}
