@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 
 const Nav = () => {
   return (
-    <header className="flex gap-10 justify-between pr-10 pl-10 pt-5 pb-5 border-b-2 border-black bg-white">
+    <header className="flex gap-10 justify-between pr-10 pl-10 pt-5 pb-5 bg-white">
       <h1>CACTIX</h1>
       <nav className="flex gap-6">
         <NavLink

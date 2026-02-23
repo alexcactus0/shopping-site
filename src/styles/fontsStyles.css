@@ -12,3 +12,8 @@
   font-family: "robotoBtns";
   src: url("./fonts/fonts/Roboto-SemiBold.ttf");
 }
+
+@font-face {
+  font-family: "spNike";
+  src: url("./fonts/nike-logo-font/Futura\ Std\ Heavy.ttf");
+}

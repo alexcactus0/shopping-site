@@ -50,7 +50,7 @@ const FirstTitle = () => {
   return (
     <div className="titleText flex flex-col items-center gap-10 text-3xl">
       <h1>THRIVE ANYWHERE.</h1>
-      <h2 className="text-xl">The world adapts to you. Never the other way.</h2>
+      <h2 className="text-xl">Built for the grit. Forged for the grind.</h2>
     </div>
   );
 };

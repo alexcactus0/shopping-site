@@ -74,6 +74,7 @@ const Video = ({ className = "", setSlide, slide, setProgress, progress }) => {
   return (
     <div className={`relative ${className}`}>
       <video
+        data-testid="video-element"
         ref={videoRef}
         onEnded={setSlide}
         className="w-full h-full object-cover"
