@@ -1,6 +1,7 @@
 import Nav from "../Nav";
 import Title from "./Title";
 import Video from "./Video";
+import Footer from "./Footer";
 import "../../styles/homeMain.css";
 import { useState } from "react";
 import Spotlight from "./Spotlight";
@@ -40,6 +41,8 @@ const Home = () => {
       <div className="z-10 w-full min-h-screen spotlight flex flex-col items-center justify-start pt-24">
         <Spotlight />
       </div>
+
+      <Footer />
     </div>
   );
 };

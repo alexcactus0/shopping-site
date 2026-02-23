@@ -33,3 +33,11 @@ button {
   font-family: "spNike";
   font-size: 3em;
 }
+
+.ft > p:first-child {
+  color: white;
+}
+
+.footer {
+  font-family: "robotoBtns";
+}

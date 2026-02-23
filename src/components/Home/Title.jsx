@@ -1,4 +1,5 @@
 import playBtn from "../../assets /play.svg";
+import { Link } from "react-router";
 
 const Title = ({ className, slide, setSlide, progress, setProgress }) => {
   return (
@@ -12,7 +13,7 @@ const Title = ({ className, slide, setSlide, progress, setProgress }) => {
       )}
       <div className="titleBtns flex gap-8">
         <button className="bg-white text-black rounded-3xl w-30 p-4 pr-7 pl-7">
-          Shop
+          <Link to="/shop">Shop</Link>
         </button>
         <button className="flex gap-2 bg-white text-black rounded-3xl w-30 p-4 pr-7 pl-7">
           <img src={playBtn} alt="play-Logo" /> Watch
