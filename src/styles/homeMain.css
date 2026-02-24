@@ -1,4 +1,5 @@
 @import "./fontsStyles.css";
+@import "./shoesCard.css";
 
 #root {
   display: flex;

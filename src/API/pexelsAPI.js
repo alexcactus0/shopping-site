@@ -13,29 +13,38 @@ const useFetchImages = (imageIds = []) => {
       try {
         // Check if images are in localStorage
         const stored = localStorage.getItem("pexelsImages");
-        if (stored) {
-          const parsed = JSON.parse(stored);
-          const filtered = parsed.filter((img) => imageIds.includes(img.id));
-          setImages(filtered);
-          return;
+        const parsed = stored ? JSON.parse(stored) : [];
+
+        const existingIds = parsed.map((img) => img.id);
+        const missingIds = imageIds.filter((id) => !existingIds.includes(id));
+
+        let newImages = [];
+
+        if (missingIds.length > 0) {
+          const requests = imageIds.map(async (id) => {
+            const response = await fetch(
+              `https://api.pexels.com/v1/photos/${id}`,
+              {
+                headers: { Authorization: PEXELS_API_KEY },
+              },
+            );
+            const data = await response.json();
+            return { id: data.id, data };
+          });
+
+          newImages = await Promise.all(requests);
+          console.log(newImages);
         }
-        // Fetch from API if not found
-        const requests = imageIds.map(async (id) => {
-          const response = await fetch(
-            `https://api.pexels.com/v1/photos/${id}`,
-            {
-              headers: { Authorization: PEXELS_API_KEY },
-            },
-          );
-          const data = await response.json();
-          return { id: data.id, data };
-        });
 
-        const results = await Promise.all(requests);
-        console.log(results);
+        const updatedImages = [...parsed, ...newImages];
 
-        setImages(results);
-        localStorage.setItem("pexelsImages", JSON.stringify(results));
+        localStorage.setItem("pexelsImages", JSON.stringify(updatedImages));
+
+        const filtered = updatedImages.filter((img) =>
+          imageIds.includes(img.id),
+        );
+
+        setImages(filtered);
       } catch (error) {
         console.log(error);
       }

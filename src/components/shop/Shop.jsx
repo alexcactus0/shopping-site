@@ -1,10 +1,11 @@
 import Nav from "../Nav";
+import Shoes from "./Shoes";
 
 const Shop = () => {
   return (
     <>
       <Nav />
-      <h1>Shop Page</h1>
+      <Shoes />
     </>
   );
 };

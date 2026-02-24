@@ -4,7 +4,7 @@
 
 # black Shirt with the girl 4066292
 
-# black air jordan 10853637
+# leather nikes 8957613
 
 # red air jordan 10195371
 
@@ -15,3 +15,7 @@
 # black bag 842959
 
 # blue air force 13288274
+
+-------- Shoes section
+
+# black and white shoes 15298950
