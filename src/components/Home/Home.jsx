@@ -17,10 +17,6 @@ const Home = () => {
 
   return (
     <div className="relative w-full overflow-x-hidden">
-      <div className="sticky top-0 left-0 w-full z-50">
-        <Nav />
-      </div>
-
       <div className="flex w-full overflow homeMain">
         <Video
           slide={slide}

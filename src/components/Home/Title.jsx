@@ -12,9 +12,11 @@ const Title = ({ className, slide, setSlide, progress, setProgress }) => {
         <ThirdTitle />
       )}
       <div className="titleBtns flex gap-8">
-        <button className="bg-white text-black rounded-3xl w-30 p-4 pr-7 pl-7">
-          <Link to="/shop">Shop</Link>
-        </button>
+        <Link to="/shop">
+          <button className="bg-white text-black rounded-3xl w-30 p-4 pr-7 pl-7">
+            Shop
+          </button>
+        </Link>
         <button className="flex gap-2 bg-white text-black rounded-3xl w-30 p-4 pr-7 pl-7">
           <img src={playBtn} alt="play-Logo" /> Watch
         </button>

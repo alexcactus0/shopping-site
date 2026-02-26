@@ -2,8 +2,7 @@ import { useFetchImages } from "../../API/pexelsAPI";
 
 const spotlightIds = [
   25561929, 8532616, 4066292, 8609111, 8957613, 10195371, 1478442, 6311719,
-  842959, 13288274, 15298950, 18155788, 2529148, 4932841, 1464624, 16947115,
-  6540992, 28375816,
+  842959, 13288274,
 ];
 
 const Spotlight = () => {
@@ -21,82 +20,64 @@ const Spotlight = () => {
           src={getImageById(25561929)?.src?.small}
           text={"NBA Finals Cap"}
           size={"120px"}
-          styles={cardSpotStyles}
         />
         <Card
           name={"card"}
           src={getImageById(8532616)?.src?.small}
           text={"Black T-Shirt (Men)"}
           size={"120px"}
-          styles={cardSpotStyles}
         />
         <Card
           name={"card"}
           src={getImageById(4066292)?.src?.small}
           text={"Black T-Shirt (Women)"}
           size={"120px"}
-          styles={cardSpotStyles}
         />
         <Card
           name={"card"}
           src={getImageById(8609111)?.src?.small}
           text={"Caramel pants"}
           size={"120px"}
-          styles={cardSpotStyles}
         />
         <Card
           name={"card"}
           src={getImageById(8957613)?.src?.small}
           text={"Nike leather shoe"}
           size={"120px"}
-          styles={cardSpotStyles}
         />
         <Card
           name={"card"}
           src={getImageById(10195371)?.src?.small}
           text={"Black & Yellow Air Jordans"}
           size={"120px"}
-          styles={cardSpotStyles}
         />
         <Card
           name={"card"}
           src={getImageById(1478442)?.src?.small}
           text={"Black & White Nikes"}
           size={"120px"}
-          styles={cardSpotStyles}
         />
         <Card
           name={"card"}
           src={getImageById(6311719)?.src?.small}
           text={"Grey Hoodie (Men)"}
           size={"120px"}
-          styles={cardSpotStyles}
         />
         <Card
           name={"card"}
           src={getImageById(842959)?.src?.small}
           text={"Black organizer Bag"}
           size={"120px"}
-          styles={cardSpotStyles}
         />
         <Card
           name={"card"}
           src={getImageById(13288274)?.src?.small}
           text={"Blue & White Air forces 1"}
           size={"120px"}
-          styles={cardSpotStyles}
         />
       </div>
     </>
   );
-};
-
-const cardSpotStyles = {
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-  gap: "2em",
 };
 
 export function Card({ src, title, text, size, price, name }) {

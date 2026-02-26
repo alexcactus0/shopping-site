@@ -33,7 +33,6 @@ const useFetchImages = (imageIds = []) => {
           });
 
           newImages = await Promise.all(requests);
-          console.log(newImages);
         }
 
         const updatedImages = [...parsed, ...newImages];

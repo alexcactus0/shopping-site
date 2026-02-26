@@ -1,12 +1,22 @@
+import { Link } from "react-router";
+
 const Footer = () => {
   return (
     <footer className="footer bg-zinc-950 text-zinc-400 flex flex-col w-full items-center ">
       <div className="navsFooter w-full pl-[6em] h-[13em] flex items-center gap-[6em]">
         <section className="ft shop h-[7.5em]">
-          <p>Shop</p>
-          <p>Shoes</p>
-          <p>Clothes</p>
-          <p>Accessories</p>
+          <p>
+            <Link to="/shop">Shop</Link>
+          </p>
+          <p>
+            <Link to="/shoes">Shoes</Link>
+          </p>
+          <p>
+            <Link to="/clothes">Clothes</Link>
+          </p>
+          <p>
+            <Link to="/accessories">Accessories</Link>
+          </p>
         </section>
         <section className="ft about  h-[7.5em]">
           <p>About</p>

@@ -1,7 +1,28 @@
-.card-shoes {
+@import "./fontsStyles.css";
+
+.card-tops,
+.card-bottoms,
+.card-shoes,
+.card-acc {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
   gap: 2em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.shoesTitle p:first-child,
+.topsTitle p:first-child,
+.bottomsTitle p:first-child,
+.accTitle p:first-child {
+  font-family: "spNike";
+  font-size: 2em;
 }

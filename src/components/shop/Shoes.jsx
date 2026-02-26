@@ -1,5 +1,7 @@
 import { useFetchImages } from "../../API/pexelsAPI";
 import { Card } from "../Home/Spotlight";
+import Nav from "../Nav";
+import Footer from "../Home/Footer";
 
 const shoesIds = [
   15298950, 18155788, 2529148, 4932841, 1464624, 6540992, 16947115, 28375816,
@@ -10,9 +12,10 @@ const Shoes = () => {
   const getImageById = (id) => shoeImage.find((img) => img.id === id)?.data;
 
   return (
-    <div className="shoes flex flex-col w-full items-center">
-      <div className="shoesTitle flex w-full pl-20">
+    <div className="shoes flex flex-col w-full items-center pt-10 border-top border-[1px]">
+      <div className="shoesTitle w-[95em] pl-[6em] pb-10">
         <p>SHOES</p>
+        <p>8 products</p>
       </div>
       <div className="shoesImages grid grid-cols-[1fr_1fr_1fr_1fr] place-content-center gap-10 pb-10">
         <Card
@@ -81,6 +84,16 @@ const Shoes = () => {
         />
       </div>
     </div>
+  );
+};
+
+export const ShoesSection = () => {
+  return (
+    <>
+      <Nav />
+      <Shoes />
+      <Footer />
+    </>
   );
 };
 
