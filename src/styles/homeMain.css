@@ -7,6 +7,10 @@
   height: 100vh;
 }
 
+body {
+  font-family: "roboto";
+}
+
 .homeMain {
   background-color: black;
   height: 91.5vh;
@@ -16,6 +20,19 @@
 
 .navLogo {
   font-family: "spNike";
+}
+
+.dp h1 {
+  font-weight: bold;
+  font-family: "roboto";
+}
+
+.dp {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.5em;
+  gap: 0.5em;
 }
 
 .clip-left {

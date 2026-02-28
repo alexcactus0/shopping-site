@@ -19,26 +19,49 @@ const Footer = () => {
           </p>
         </section>
         <section className="ft about  h-[7.5em]">
-          <p>About</p>
-          <p>Careers</p>
-          <p>About Cactix</p>
-          <p>Meet the Team</p>
+          <p>
+            <Link>About</Link>
+          </p>
+          <p>
+            <Link>Careers</Link>
+          </p>
+          <p>
+            <Link>About Cactix</Link>
+          </p>
+          <p>
+            <Link>Meet the Team</Link>
+          </p>
         </section>
         <section className="ft help h-[7.5em] ">
-          <p>Help</p>
-          <p>FAQ</p>
-          <p>Support</p>
-          <p>Acoount Help</p>
-          <p>Shipping & Returns</p>
+          <p>
+            <Link>Help</Link>
+          </p>
+          <p>
+            <Link>FAQ</Link>
+          </p>
+          <p>
+            <Link>Support</Link>
+          </p>
+          <p>
+            <Link>Account Help</Link>
+          </p>
+          <p>
+            <Link>Shipping & Returnr</Link>
+          </p>
         </section>
         <section className="ft shopName flex flex-col items-center h-[7.5em] w-[20em] ">
-          <p className="text-xl">CACTIX</p>
+          <p className="text-xl">
+            <Link to="/">CACTIX</Link>
+          </p>
           <p>Built for those who never give it up</p>
         </section>
       </div>
       <div className="creator flex justify-center items-center w-full gap-[20em] p-5">
         <div className="date">@2026 Cactix, All Rights Reserved</div>
-        <div className="me">Built and Maintained by alexcactus0</div>
+        <div className="me">
+          Built and Maintained by
+          <a href="https://github.com/alexcactus0">alexcactus0</a>
+        </div>
         <div className="privacy flex gap-5">
           <p>Privacy Policy</p>
           <p>Terms of Use</p>

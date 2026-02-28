@@ -3,10 +3,16 @@ import Home from "./components/Home/Home";
 import Shop from "./components/shop/Shop";
 import Cart from "./components/cart/CartPage";
 import { ClothesSection } from "./components/shop/Clothes";
-import { TopsSection } from "./components/shop/Clothes";
+import {
+  TopsSection,
+  TShirts,
+  Graphic,
+  Hoodies,
+} from "./components/shop/Clothes";
 import { BottomsSection } from "./components/shop/Clothes";
 import { ShoesSection } from "./components/shop/Shoes";
 import { AccessoriesSection } from "./components/shop/Accessories";
+import { Outlet } from "react-router";
 
 const routes = [
   {
@@ -31,7 +37,17 @@ const routes = [
   },
   {
     path: "tops",
-    element: <TopsSection />,
+    element: (
+      <div className="tops-wrapper">
+        <Outlet />
+      </div>
+    ),
+    children: [
+      { index: true, element: <TopsSection /> },
+      { path: "t-shirts", element: <TShirts /> },
+      { path: "graphic-tees", element: <Graphic /> },
+      { path: "hoodies", element: <Hoodies /> },
+    ],
   },
   {
     path: "bottoms",

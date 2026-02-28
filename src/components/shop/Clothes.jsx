@@ -114,6 +114,157 @@ const Tops = () => {
   );
 };
 
+export const Graphic = () => {
+  const images = useFetchImages(topsIds);
+
+  const getImageById = (id) => images.find((img) => img.id === id)?.data;
+
+  return (
+    <>
+      <Nav />
+      <div className="tops flex flex-col items-center border-top border-[1px] pb-10">
+        <div className="topsTitle w-[95em] pl-[6em] pb-10 pt-10">
+          <p>GRAPHIC TEES</p>
+          <p>4 products</p>
+        </div>
+        <div className="gap-10 grid grid-cols-5 pb-20 place-content-center pl-5">
+          <Card
+            title={"Tops"}
+            name={"card-tops"}
+            src={getImageById(8148577)?.src?.original}
+            size={"200px"}
+            text={"Orange Cropped T-Shirt (Women)"}
+            price={"€ 14.99"}
+          />
+          <Card
+            title={"Tops"}
+            name={"card-tops"}
+            src={getImageById(22441317)?.src?.original}
+            size={"200px"}
+            text={"Dark Blue T-Shirt (Men)"}
+            price={"€ 19.99"}
+          />
+          <Card
+            title={"Tops"}
+            name={"card-tops"}
+            src={getImageById(20669538)?.src?.original}
+            size={"200px"}
+            text={"White T-Shirt (Men)"}
+            price={"€ 24.99"}
+          />
+          <Card
+            title={"Tops"}
+            name={"card-tops"}
+            src={getImageById(22441291)?.src?.original}
+            size={"200px"}
+            text={"Beige Casual Shirt (Women)"}
+            price={"€ 34.99"}
+          />
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export const TShirts = () => {
+  const images = useFetchImages(topsIds);
+
+  const getImageById = (id) => images.find((img) => img.id === id)?.data;
+
+  return (
+    <>
+      <Nav />
+      <div className="tops flex flex-col items-center border-top border-[1px] pb-10">
+        <div className="topsTitle w-[95em] pl-[6em] pb-10 pt-10">
+          <p>T-SHIRTS</p>
+          <p>3 products</p>
+        </div>
+        <div className="gap-10 grid grid-cols-5 pb-20 place-content-center pl-5">
+          <Card
+            title={"Tops"}
+            name={"card-tops"}
+            src={getImageById(8148577)?.src?.original}
+            size={"200px"}
+            text={"Orange Cropped T-Shirt (Women)"}
+            price={"€ 14.99"}
+          />
+          <Card
+            title={"Tops"}
+            name={"card-tops"}
+            src={getImageById(22441317)?.src?.original}
+            size={"200px"}
+            text={"Dark Blue T-Shirt (Men)"}
+            price={"€ 19.99"}
+          />
+          <Card
+            title={"Tops"}
+            name={"card-tops"}
+            src={getImageById(20669538)?.src?.original}
+            size={"200px"}
+            text={"White T-Shirt (Men)"}
+            price={"€ 24.99"}
+          />
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export const Hoodies = () => {
+  const images = useFetchImages(topsIds);
+
+  const getImageById = (id) => images.find((img) => img.id === id)?.data;
+
+  return (
+    <>
+      <Nav />
+      <div className="tops flex flex-col items-center border-top border-[1px] pb-10">
+        <div className="topsTitle w-[95em] pl-[6em] pb-10 pt-10">
+          <p>HOODIES</p>
+          <p>4 products</p>
+        </div>
+        <div className="gap-10 grid grid-cols-5 pb-20 place-content-center pl-5">
+          <Card
+            title={"Tops"}
+            name={"card-tops"}
+            src={getImageById(6311642)?.src?.original}
+            size={"200px"}
+            text={"Gray Hoodie (Women)"}
+            price={"€ 39.99"}
+          />
+          <Card
+            title={"Tops"}
+            name={"card-tops"}
+            src={getImageById(6311670)?.src?.original}
+            size={"200px"}
+            text={"Casual Hoodie (Men)"}
+            price={"€ 44.99"}
+          />
+          <Card
+            title={"Tops"}
+            name={"card-tops"}
+            src={getImageById(6311449)?.src?.original}
+            size={"200px"}
+            text={"White Hooded Sportswear (Men)"}
+            price={"€ 39.99"}
+          />
+          <Card
+            title={"Tops"}
+            name={"card-tops"}
+            src={getImageById(6311628)?.src?.original}
+            size={"200px"}
+            text={"Black Hoodie (Men)"}
+            price={"€ 39.99"}
+          />
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+};
+
 const bottomsIds = [
   19456438, 6727414, 13125260, 11716437, 9775494, 33055598, 33055635, 19995459,
   19995460, 17135748,

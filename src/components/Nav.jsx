@@ -1,4 +1,5 @@
-import { NavLink } from "react-router";
+import { NavLink, Link } from "react-router";
+import { useState, useRef } from "react";
 import cacti from "../assets /cacti.svg";
 
 const CustomNavLink = ({ to, children }) => {
@@ -15,7 +16,7 @@ const CustomNavLink = ({ to, children }) => {
         <>
           {children}
           <span
-            className={`absolute left-0 bottom-0 h-[2px] bg-black rounded-2xl transition-transform duration-700 ease-in-out origin-left ${
+            className={`absolute left-0 bottom-0 h-[2px] bg-black rounded-2xl transition-transform duration-500 ease-in-out origin-left ${
               isActive ? "scale-x-100 opacity-100" : "scale-x-0 opacity-0"
             }`}
             style={{ width: "100%" }}
@@ -27,24 +28,111 @@ const CustomNavLink = ({ to, children }) => {
 };
 
 const Nav = () => {
+  const [isHovering, setIsHovering] = useState(false);
+  const timeoutRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setIsHovering(true);
+  };
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsHovering(false);
+    }, 300);
+  };
+
   return (
-    <header className="flex gap-10 justify-between px-10 pt-4 pb-5 bg-white border-b-[1px] sticky top-0 left-0 w-full z-50">
+    <header className="flex gap-10 justify-between px-10 pt-3 pb-3 bg-white border-b-[1px] sticky top-0 left-0 w-full z-50">
       <div className="navLogo flex gap-2 items-end text-2xl font-semibold">
-        <p>CACTIX</p>
+        <p>
+          <Link to="/">CACTIX</Link>
+        </p>
         <img src={cacti} alt="Logo" />
       </div>
 
       <nav className="grid grid-cols-[1fr_10em] items-center w-full">
         <div className="homeShop flex gap-10 justify-center">
           <CustomNavLink to="/">Home</CustomNavLink>
-          <CustomNavLink to="/shop">Shop</CustomNavLink>
-        </div>
 
+          <div
+            className="relative"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <CustomNavLink to="/shop">
+              <div className="shopNav">Shop</div>
+            </CustomNavLink>
+          </div>
+          {isHovering && (
+            <Dropdown
+              handleMouseEnter={handleMouseEnter}
+              handleMouseLeave={handleMouseLeave}
+            />
+          )}
+        </div>
         <div className="cartSection flex justify-end">
           <CustomNavLink to="/cart">Cart</CustomNavLink>
         </div>
       </nav>
     </header>
+  );
+};
+
+const Dropdown = ({ handleMouseEnter, handleMouseLeave }) => {
+  return (
+    <div
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="fixed inset-0 top-16 z-40 h-[15em] border-2 bg-white flex justify-center gap-[8em]"
+    >
+      <div className="dpTops dp">
+        <h1>Tops</h1>
+        <div className="dpDes">
+          <p>
+            <Link to="/tops">All Tops</Link>
+          </p>
+          <p>
+            <Link to="/tops/t-shirts">T-Shirts</Link>
+          </p>
+          <p>
+            <Link to="/tops/graphic-tees">Graphic Tees</Link>
+          </p>
+          <p>
+            <Link to="/tops/hoodies">Hoodies</Link>
+          </p>
+          <p>Sweatshirts</p>
+          <p>Tank Tops</p>
+        </div>
+      </div>
+      <div className="dpBottoms dp">
+        <h1>Bottoms</h1>
+        <div className="dpDes">
+          <p>All Bottoms</p>
+          <p>Jeans</p>
+          <p>Cargo Pants</p>
+          <p>Sweatpants & Joggers</p>
+          <p>Pants</p>
+        </div>
+      </div>
+      <div className="dpShoes dp">
+        <h1>Shoes</h1>
+        <div className="dpDes">
+          <p>All Shoes</p>
+          <p>Casual & Everyday</p>
+          <p>Sneakers</p>
+          <p>Designer Shoes</p>
+        </div>
+      </div>
+      <div className="dpAcc dp">
+        <h1>Accessories</h1>
+        <div className="dpDes">
+          <p>All Accessoires</p>
+          <p>Bagpacks</p>
+          <p>Handbags</p>
+          <p>Hats & Headwear</p>
+        </div>
+      </div>
+    </div>
   );
 };
 
