@@ -17,7 +17,7 @@ const Shoes = () => {
         <p>SHOES</p>
         <p>8 products</p>
       </div>
-      <div className="shoesImages grid grid-cols-[1fr_1fr_1fr_1fr] place-content-center gap-10 pb-10">
+      <div className="shoesImages grid grid-cols-4 place-content-center gap-10 pb-10">
         <Card
           title={"Shoes"}
           name={"card-shoes"}
@@ -84,6 +84,138 @@ const Shoes = () => {
         />
       </div>
     </div>
+  );
+};
+
+export const CasualNdEvday = () => {
+  const shoeImage = useFetchImages(shoesIds);
+  const getImageById = (id) => shoeImage.find((img) => img.id === id)?.data;
+
+  return (
+    <>
+      <Nav />
+      <div className="shoes flex flex-col w-full items-center pt-10">
+        <div className="shoesTitle w-[95em] pl-[6em] pb-10">
+          <p>CASUAL & EVERYDAY</p>
+          <p>4 products</p>
+        </div>
+        <div className="shoesImages grid grid-cols-4 place-content-center gap-10 pb-24 pt-4">
+          <Card
+            title={"Shoes"}
+            name={"card-shoes"}
+            src={getImageById(15298950)?.src?.original}
+            size={"200px"}
+            text={"Nike classic Dunks"}
+            price={"€ 103,00"}
+          />
+          <Card
+            title={"Shoes"}
+            name={"card-shoes"}
+            src={getImageById(16947115)?.src?.original}
+            size={"240px"}
+            text={"Nike shoes"}
+            price={"€ 85,00"}
+          />
+          <Card
+            title={"Shoes"}
+            name={"card-shoes"}
+            src={getImageById(6540992)?.src?.original}
+            size={"240px"}
+            text={"Nike high top sneakers"}
+            price={"€ 322,00"}
+          />
+          <Card
+            title={"Shoes"}
+            name={"card-shoes"}
+            src={getImageById(4932841)?.src?.original}
+            size={"200px"}
+            text={"New Balance Sneakers"}
+            price={"€ 136,00"}
+          />
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export const Sneakers = () => {
+  const shoeImage = useFetchImages(shoesIds);
+  const getImageById = (id) => shoeImage.find((img) => img.id === id)?.data;
+
+  return (
+    <>
+      <Nav />
+      <div className="shoes flex flex-col w-full items-center pt-10">
+        <div className="shoesTitle w-[95em] pl-[6em] pb-10">
+          <p>SNEAKERS</p>
+          <p>4 products</p>
+        </div>
+        <div className="shoesImages grid grid-cols-4 place-content-center gap-10 pb-24 pt-4">
+          <Card
+            title={"Shoes"}
+            name={"card-shoes"}
+            src={getImageById(18155788)?.src?.original}
+            size={"220px"}
+            text={"Designer Sneakers"}
+            price={"€ 980,00"}
+          />
+          <Card
+            title={"Shoes"}
+            name={"card-shoes"}
+            src={getImageById(2529148)?.src?.original}
+            size={"235px"}
+            text={"Nike Sneakers"}
+            price={"€ 73,00"}
+          />
+          <Card
+            title={"Shoes"}
+            name={"card-shoes"}
+            src={getImageById(6540992)?.src?.original}
+            size={"240px"}
+            text={"Nike high top sneakers"}
+            price={"€ 322,00"}
+          />
+          <Card
+            title={"Shoes"}
+            name={"card-shoes"}
+            src={getImageById(4932841)?.src?.original}
+            size={"200px"}
+            text={"New Balance Sneakers"}
+            price={"€ 136,00"}
+          />
+        </div>
+      </div>
+      <Footer />
+    </>
+  );
+};
+
+export const Designer = () => {
+  const shoeImage = useFetchImages(shoesIds);
+  const getImageById = (id) => shoeImage.find((img) => img.id === id)?.data;
+
+  return (
+    <>
+      <Nav />
+      <div className="shoes flex flex-col w-full items-center pt-10">
+        <div className="shoesTitle w-[95em] pl-[6em] pb-10">
+          <p>DESIGNER SHOES</p>
+          <p>1 product</p>
+        </div>
+        <div className="shoesImages grid grid-cols-4 place-content-center gap-10 pb-24 pt-4">
+          <Card
+            title={"Shoes"}
+            name={"card-shoes"}
+            src={getImageById(18155788)?.src?.original}
+            size={"220px"}
+            text={"Designer Sneakers"}
+            price={"€ 980,00"}
+          />
+        </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 

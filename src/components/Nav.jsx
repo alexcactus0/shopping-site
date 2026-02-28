@@ -83,7 +83,7 @@ const Dropdown = ({ handleMouseEnter, handleMouseLeave }) => {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="fixed inset-0 top-16 z-40 h-[15em] border-2 bg-white flex justify-center gap-[8em]"
+      className="fixed inset-0 top-16 z-40 h-[15em] border-top border-[1px] bg-white flex justify-center gap-[8em]"
     >
       <div className="dpTops dp">
         <h1>Tops</h1>
@@ -100,27 +100,46 @@ const Dropdown = ({ handleMouseEnter, handleMouseLeave }) => {
           <p>
             <Link to="/tops/hoodies">Hoodies</Link>
           </p>
-          <p>Sweatshirts</p>
-          <p>Tank Tops</p>
+          <p>
+            <Link to="/tops/jackets">Jackets</Link>
+          </p>
         </div>
       </div>
       <div className="dpBottoms dp">
         <h1>Bottoms</h1>
         <div className="dpDes">
-          <p>All Bottoms</p>
-          <p>Jeans</p>
-          <p>Cargo Pants</p>
-          <p>Sweatpants & Joggers</p>
-          <p>Pants</p>
+          <p>
+            <Link to="/bottoms">All Bottoms</Link>
+          </p>
+          <p>
+            <Link to="/bottoms/jeans">Jeans</Link>
+          </p>
+          <p>
+            <Link to="/bottoms/cargo-pants">Cargo Pants</Link>
+          </p>
+          <p>
+            <Link to="/bottoms/sweatpants-&-joggers">Sweatpants & Joggers</Link>
+          </p>
+          <p>
+            <Link to="/bottoms/pants">Pants</Link>
+          </p>
         </div>
       </div>
       <div className="dpShoes dp">
         <h1>Shoes</h1>
         <div className="dpDes">
-          <p>All Shoes</p>
-          <p>Casual & Everyday</p>
-          <p>Sneakers</p>
-          <p>Designer Shoes</p>
+          <p>
+            <Link to="/shoes">All Shoes</Link>
+          </p>
+          <p>
+            <Link to="/shoes/casual-&-everyday">Casual & Everyday</Link>
+          </p>
+          <p>
+            <Link to="/shoes/sneakers">Sneakers</Link>
+          </p>
+          <p>
+            <Link to="/shoes/designer-shoes">Designer Shoes</Link>
+          </p>
         </div>
       </div>
       <div className="dpAcc dp">
