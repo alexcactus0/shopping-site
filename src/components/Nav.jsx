@@ -145,10 +145,18 @@ const Dropdown = ({ handleMouseEnter, handleMouseLeave }) => {
       <div className="dpAcc dp">
         <h1>Accessories</h1>
         <div className="dpDes">
-          <p>All Accessoires</p>
-          <p>Bagpacks</p>
-          <p>Handbags</p>
-          <p>Hats & Headwear</p>
+          <p>
+            <Link to="/accessories">All Accessoires</Link>
+          </p>
+          <p>
+            <Link to="/accessories/backpacks">Bagpacks</Link>
+          </p>
+          <p>
+            <Link to="/accessories/handbags">Handbags</Link>
+          </p>
+          <p>
+            <Link to="/accessories/hats-&-headwear">Hats & Headwear</Link>
+          </p>
         </div>
       </div>
     </div>

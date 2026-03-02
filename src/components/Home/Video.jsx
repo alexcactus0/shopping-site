@@ -2,12 +2,10 @@ import { PEXELS_API_KEY } from "../../API/pexelsAPI";
 import { useEffect, useState, useRef } from "react";
 
 const Video = ({ className = "", setSlide, slide, setProgress, progress }) => {
-  const [video, setVideo] = useState(null);
+  const [videos, setVideos] = useState([]);
   const videoRef = useRef(null);
-
   const [isPlaying, setIsPlaying] = useState(true);
 
-  // Constants for the circle
   const radius = 36;
   const circumference = 2 * Math.PI * radius;
 
@@ -34,59 +32,52 @@ const Video = ({ className = "", setSlide, slide, setProgress, progress }) => {
   useEffect(() => {
     const fetchVideos = async () => {
       try {
-        const [res1, res2, res3] = await Promise.all([
+        const responses = await Promise.all([
           fetch("https://api.pexels.com/videos/videos/30514807", {
-            headers: {
-              Authorization: PEXELS_API_KEY,
-            },
+            headers: { Authorization: PEXELS_API_KEY },
           }),
           fetch("https://api.pexels.com/videos/videos/5275686", {
-            headers: {
-              Authorization: PEXELS_API_KEY,
-            },
+            headers: { Authorization: PEXELS_API_KEY },
           }),
           fetch("https://api.pexels.com/videos/videos/8695148", {
-            headers: {
-              Authorization: PEXELS_API_KEY,
-            },
+            headers: { Authorization: PEXELS_API_KEY },
           }),
         ]);
-
-        const data1 = await res1.json();
-        const data2 = await res2.json();
-        const data3 = await res3.json();
-
-        if (slide === 0) setVideo(data1);
-        else if (slide === 1) setVideo(data2);
-        else setVideo(data3);
-      } catch (error) {
-        console.log(error);
+        const data = await Promise.all(responses.map((res) => res.json()));
+        setVideos(data);
+      } catch (err) {
+        console.error(err);
       }
     };
-
     fetchVideos();
-  }, [slide]);
+  }, []);
 
-  const videoSrc = video?.video_files[0]?.link;
-
-  if (!video) return <div className="text-white">Loading...</div>;
+  const video = videos[slide];
+  const videoSrc = video?.video_files?.[0]?.link;
 
   return (
-    <div className={`relative ${className}`}>
-      <video
-        data-testid="video-element"
-        ref={videoRef}
-        onEnded={setSlide}
-        className="w-full h-full object-cover"
-        src={videoSrc}
-        autoPlay
-        muted
-        playsInline
-        onTimeUpdate={handleTimeUpdate}
-        onLoadedMetadata={handleTimeUpdate}
-      />
+    <div className={`relative w-1/2 h-full bg-black ${className}`}>
+      <div className="clip-wrapper absolute inset-0 w-full h-full overflow-hidden">
+        {!video && <div className="absolute inset-0 bg-black animate-pulse" />}
 
-      <div className="absolute bottom-6 right-40 w-12 h-12">
+        {videoSrc && (
+          <video
+            key={videoSrc}
+            ref={videoRef}
+            src={videoSrc}
+            autoPlay
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-0 transition-opacity duration-700 ease-in-out"
+            onLoadedData={(e) => (e.target.style.opacity = 1)}
+            onTimeUpdate={handleTimeUpdate}
+            onLoadedMetadata={handleTimeUpdate}
+            onEnded={setSlide}
+          />
+        )}
+      </div>
+
+      <div className="absolute bottom-6 right-40 w-12 h-12 z-20">
         <svg
           className="absolute inset-0 w-full h-full -rotate-90"
           viewBox="0 0 80 80"
@@ -94,7 +85,7 @@ const Video = ({ className = "", setSlide, slide, setProgress, progress }) => {
           <circle
             cx="40"
             cy="40"
-            r="36"
+            r={radius}
             stroke="white"
             strokeOpacity="0.2"
             strokeWidth="6"
@@ -103,7 +94,7 @@ const Video = ({ className = "", setSlide, slide, setProgress, progress }) => {
           <circle
             cx="40"
             cy="40"
-            r="36"
+            r={radius}
             stroke="white"
             strokeWidth="6"
             fill="none"
@@ -112,7 +103,6 @@ const Video = ({ className = "", setSlide, slide, setProgress, progress }) => {
             strokeLinecap="round"
           />
         </svg>
-
         <button
           onClick={togglePlay}
           className="absolute inset-0 m-auto flex items-center justify-center aspect-square rounded-full bg-white/10 backdrop-blur-sm text-white transition-all overflow-hidden"

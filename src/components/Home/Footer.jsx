@@ -18,7 +18,7 @@ const Footer = () => {
             <Link to="/accessories">Accessories</Link>
           </p>
         </section>
-        <section className="ft about  h-[7.5em]">
+        <section className="ft about h-[7.5em]">
           <p>
             <Link>About</Link>
           </p>
@@ -32,7 +32,7 @@ const Footer = () => {
             <Link>Meet the Team</Link>
           </p>
         </section>
-        <section className="ft help h-[7.5em] ">
+        <section className="ft help h-[7.5em]">
           <p>
             <Link>Help</Link>
           </p>
@@ -49,7 +49,7 @@ const Footer = () => {
             <Link>Shipping & Returnr</Link>
           </p>
         </section>
-        <section className="ft shopName flex flex-col items-center h-[7.5em] w-[20em] ">
+        <section className="ft shopName flex flex-col items-center h-[7.5em] w-[20em]">
           <p className="text-xl">
             <Link to="/">CACTIX</Link>
           </p>
@@ -60,7 +60,7 @@ const Footer = () => {
         <div className="date">@2026 Cactix, All Rights Reserved</div>
         <div className="me">
           Built and Maintained by
-          <a href="https://github.com/alexcactus0">alexcactus0</a>
+          <a href="https://github.com/alexcactus0"> alexcactus0</a>
         </div>
         <div className="privacy flex gap-5">
           <p>Privacy Policy</p>

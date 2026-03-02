@@ -21,7 +21,7 @@ const useFetchImages = (imageIds = []) => {
         let newImages = [];
 
         if (missingIds.length > 0) {
-          const requests = imageIds.map(async (id) => {
+          const requests = missingIds.map(async (id) => {
             const response = await fetch(
               `https://api.pexels.com/v1/photos/${id}`,
               {

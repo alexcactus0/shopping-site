@@ -1,0 +1,51 @@
+export const accProducts = [
+  {
+    id: "black-backpack",
+    imageId: 18999333,
+    name: "Black Backpack",
+    price: `€ ${39.99}`,
+    category: "accessories",
+  },
+  {
+    id: "dark-gray-backpack",
+    imageId: 3731256,
+    name: "Dark Gray Backpack",
+    price: `€ ${33.99}`,
+    category: "accessories",
+  },
+  {
+    id: "black-tactical-backpack",
+    imageId: 17492091,
+    name: "Black Tactical Backpack",
+    price: `€ ${49.99}`,
+    category: "accessories",
+  },
+  {
+    id: "stylish-sunglasses",
+    imageId: 5472300,
+    name: "Stylish Sunglasses",
+    price: `€ ${9.99}`,
+    category: "accessories",
+  },
+  {
+    id: "black-cap",
+    imageId: 13876038,
+    name: "Black Cap",
+    price: `€ ${19.99}`,
+    category: "accessories",
+  },
+  {
+    id: "purple-handbag",
+    imageId: 11031128,
+    name: "Purple Handbag",
+    price: `€ ${44.99}`,
+    category: "accessories",
+  },
+  {
+    id: "black-handbag",
+    imageId: 14173534,
+    name: "Black Handbag",
+    price: `€ ${49.99}`,
+    category: "accessories",
+  },
+];

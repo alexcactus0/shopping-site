@@ -1,0 +1,58 @@
+export const shoesProducts = [
+  {
+    id: "nike-classic-dunks",
+    imageId: 15298950,
+    name: "Nike classic Dunks",
+    price: `€ ${103.99}`,
+    category: "shoes",
+  },
+  {
+    id: "designer-sneakers",
+    imageId: 18155788,
+    name: "Designer Sneakers",
+    price: `€ ${979.99}`,
+    category: "shoes",
+  },
+  {
+    id: "nike-sneakers",
+    imageId: 2529148,
+    name: "Nike Sneakers",
+    price: `€ ${73.99}`,
+    category: "shoes",
+  },
+  {
+    id: "nike-shoes",
+    imageId: 16947115,
+    name: "Nike Shoes",
+    price: `€ ${85.99}`,
+    category: "shoes",
+  },
+  {
+    id: "nike-running-shoes",
+    imageId: 1464624,
+    name: "Nike running shoes",
+    price: `€ ${65.99}`,
+    category: "shoes",
+  },
+  {
+    id: "nike-high-top-sneakers",
+    imageId: 6540992,
+    name: "Nike high top sneakers",
+    price: `€ ${322.99}`,
+    category: "shoes",
+  },
+  {
+    id: "sports-shoes",
+    imageId: 28375816,
+    name: "Sports shoes",
+    price: `€ ${48.99}`,
+    category: "shoes",
+  },
+  {
+    id: "new-balance-sneakers",
+    imageId: 4932841,
+    name: "New Balance Sneakers",
+    price: `€ ${136.99}`,
+    category: "shoes",
+  },
+];

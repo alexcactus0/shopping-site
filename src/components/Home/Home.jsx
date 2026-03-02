@@ -17,13 +17,13 @@ const Home = () => {
 
   return (
     <div className="relative w-full overflow-x-hidden">
-      <div className="flex w-full overflow homeMain">
+      <div className="flex w-full homeMain">
         <Video
           slide={slide}
           setSlide={handleVideoChange}
           setProgress={setProgress}
           progress={progress}
-          className="z-10 w-1/2 flex items-center justify-center clip-left relative"
+          className="z-10"
         />
         <Title
           slide={slide}
