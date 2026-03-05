@@ -1,3 +1,4 @@
+// src/API/pexelsAPI.js
 import { useState, useEffect } from "react";
 
 const PEXELS_API_KEY =
@@ -11,7 +12,7 @@ const useFetchImages = (imageIds = []) => {
 
     const fetchImages = async () => {
       try {
-        // Check if images are in localStorage
+        // Get stored images from localStorage
         const stored = localStorage.getItem("pexelsImages");
         const parsed = stored ? JSON.parse(stored) : [];
 
@@ -35,6 +36,7 @@ const useFetchImages = (imageIds = []) => {
           newImages = await Promise.all(requests);
         }
 
+        // Combine existing and new images
         const updatedImages = [...parsed, ...newImages];
 
         localStorage.setItem("pexelsImages", JSON.stringify(updatedImages));
@@ -43,13 +45,21 @@ const useFetchImages = (imageIds = []) => {
           imageIds.includes(img.id),
         );
 
-        setImages(filtered);
+        setImages((prev) => {
+          const prevIds = prev.map((i) => i.id);
+          const filteredIds = filtered.map((i) => i.id);
+          if (JSON.stringify(prevIds) === JSON.stringify(filteredIds))
+            return prev;
+          return filtered;
+        });
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
+
     fetchImages();
   }, [imageIds]);
+
   return images;
 };
 

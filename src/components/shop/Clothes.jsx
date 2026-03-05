@@ -33,7 +33,7 @@ export const ClothesCategory = ({ title, selectedIds, dec = true }) => {
           <p>{selectedProducts.length} products</p>
         </div>
 
-        <div className="gap-10 grid grid-cols-5 place-content-center pl-5 pb-14 pt-4">
+        <div className="gap-6 grid grid-cols-5 grid-rows-2 place-content-center pl-5 pb-10 pt-4">
           {selectedProducts.map((product) => (
             <Card
               key={product.id}
@@ -123,7 +123,7 @@ export const BottomsCategory = ({ title, selectedIds, dec = true }) => {
           <p>{selectedProducts.length} products</p>
         </div>
 
-        <div className="gap-10 grid grid-cols-5 place-content-center pl-5 pb-14 pt-4">
+        <div className="gap-6 grid grid-cols-5 grid-rows-2 place-content-center pl-5 pb-10 pt-4">
           {selectedProducts.map((product) => (
             <Card
               key={product.id}

@@ -34,7 +34,7 @@ const Home = () => {
         />
       </div>
 
-      <div className="z-10 w-full min-h-screen spotlight flex flex-col items-center justify-start pt-24">
+      <div className="z-10 w-full min-h-screen spotlight flex flex-col items-center justify-start pt-16">
         <Spotlight />
       </div>
 

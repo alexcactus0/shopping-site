@@ -1,4 +1,3 @@
-import playBtn from "../../assets /play.svg";
 import { Link } from "react-router";
 
 const Title = ({ className, slide, setSlide, progress, setProgress }) => {
@@ -13,13 +12,10 @@ const Title = ({ className, slide, setSlide, progress, setProgress }) => {
       )}
       <div className="titleBtns flex gap-8">
         <Link to="/shop">
-          <button className="bg-white text-black rounded-3xl w-30 p-4 pr-7 pl-7">
+          <button className="bg-white text-black rounded-3xl w-30 p-4 pr-12 pl-12">
             Shop
           </button>
         </Link>
-        <button className="flex gap-2 bg-white text-black rounded-3xl w-30 p-4 pr-7 pl-7">
-          <img src={playBtn} alt="play-Logo" /> Watch
-        </button>
       </div>
       <div className="flex gap-4">
         {[0, 1, 2].map((index) => (

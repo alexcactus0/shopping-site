@@ -1,11 +1,14 @@
 import Nav from "./components/Nav";
+import { CartProvider } from "./components/cart/CartContext.jsx";
 import { Outlet } from "react-router";
 
 const App = () => {
   return (
     <>
-      <Nav />
-      <Outlet />
+      <CartProvider>
+        <Nav />
+        <Outlet />
+      </CartProvider>
     </>
   );
 };

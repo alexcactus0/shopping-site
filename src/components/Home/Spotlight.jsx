@@ -15,7 +15,7 @@ const Spotlight = () => {
     <>
       <h1>SPOTLIGHT</h1>
       <p>Pointed focus. Rooted grit. {">"} Pure Cactix energy. Every bit.</p>
-      <div className="cards w-[80em] h-[30em] grid grid-cols-5 grid-rows-2 place-content-center">
+      <div className="cards w-[80em] h-[30em] grid grid-cols-5 grid-rows-2 place-content-center mt-16 mb-12">
         {spotlightProducts.map((product) => (
           <Card
             key={product.id}
@@ -35,27 +35,30 @@ export function Card({ product, src, size, dec = true, int = false }) {
 
   return (
     <div
-      className={product.category}
+      className={`${product.category} cursor-pointer group pb-12`}
       onClick={() => navigate(`/product/${product.id}`)}
     >
-      <div className="imageWrapper grid place-content-center cursor-pointer">
-        <div className="fetchedImage w-[fit-content] overflow-hidden">
-          <img
-            src={src}
-            alt={product.name}
-            width={size}
-            className="rounded-xl"
-          />
-        </div>
+      <div className="imageWrapper grid place-content-center overflow-hidden rounded-xl">
+        <img src={src} alt={product.name} width={size} className="rounded-xl" />
       </div>
 
-      <div className="cardDes">
-        {dec && <p>{product.category}</p>}
+      <div className="cardDes px-1 space-y-1">
+        {dec && (
+          <p className="text-gray-400 text-sm uppercase tracking-wider">
+            {product.category}
+          </p>
+        )}
+
         {!int && (
-          <>
-            <p>{product.name}</p>
-            <p>{product.price}</p>
-          </>
+          <h2 className="text-medium font-semibold text-gray-900 leading-tight">
+            {product.name}
+          </h2>
+        )}
+
+        {dec && (
+          <p className="text-medium font-bold text-gray-900">
+            {product.price || "€ 0.00"}
+          </p>
         )}
       </div>
     </div>

@@ -2,11 +2,14 @@ import { useParams, Link } from "react-router-dom";
 import { useMemo } from "react";
 import { useFetchImages } from "../../../API/pexelsAPI";
 import { allProducts } from "./allProducts.js";
+import { useCart } from "../../cart/useCart.js";
 import Interested from "./Interested.jsx";
 import Footer from "../../Home/Footer";
 
 export const ProductPage = () => {
   const { id } = useParams();
+  const { addToCart } = useCart();
+
   const product = allProducts.find((p) => p.id === id);
 
   const imageIds = useMemo(() => (product ? [product.imageId] : []), [product]);
@@ -79,7 +82,11 @@ export const ProductPage = () => {
               </select>
             </div>
 
-            <button className="mt-4 bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition">
+            <button
+              type="button"
+              onClick={() => addToCart(product)}
+              className="mt-4 bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 transition"
+            >
               Add to Cart
             </button>
           </div>

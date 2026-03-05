@@ -1,6 +1,7 @@
 import { NavLink, Link } from "react-router";
 import { useState, useRef } from "react";
 import cacti from "../assets /cacti.svg";
+import { useCart } from "./cart/useCart";
 
 const CustomNavLink = ({ to, children }) => {
   return (
@@ -28,6 +29,12 @@ const CustomNavLink = ({ to, children }) => {
 };
 
 const Nav = () => {
+  const { cartItems } = useCart();
+  const totalItems = cartItems.reduce(
+    (sum, item) => sum + (item.quantity || 1),
+    0,
+  );
+
   const [isHovering, setIsHovering] = useState(false);
   const timeoutRef = useRef(null);
 
@@ -70,8 +77,18 @@ const Nav = () => {
             />
           )}
         </div>
+
         <div className="cartSection flex justify-end">
-          <CustomNavLink to="/cart">Cart</CustomNavLink>
+          <CustomNavLink to="/cart">
+            <span className="relative inline-block">
+              Cart
+              {totalItems > 0 && (
+                <span className="absolute -top-2 -right-4 bg-black text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">
+                  {totalItems}
+                </span>
+              )}
+            </span>
+          </CustomNavLink>
         </div>
       </nav>
     </header>
