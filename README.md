@@ -26,3 +26,6 @@ Product images and videos are fetched using the **Pexels API**.
 
 ## Purpose
 The goal of this project was to apply React routing, hooks, and component structure in a small real-world style application.
+
+## Deployed
+Deployed on Netlify follow this link: **shopping-site21.netlify.app**
