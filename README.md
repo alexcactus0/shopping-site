@@ -1,16 +1,28 @@
-# React + Vite
+# React Shopping Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This project is a mock shopping website built with React to practice important React concepts such as React Router and common React Hooks. The application allows users to browse products, add them to a cart, and manage the items they want to buy.
 
-Currently, two official plugins are available:
+## Features
+- Three main pages: **Home**, **Shop**, and **Cart**
+- Product cards displayed on the shop page
+- Users can select the quantity of products
+- Add products to the cart
+- View items in the cart
+- Increase or decrease product quantities
+- Remove items from the cart
+- Navigation bar shows the current number of items in the cart in real time
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## React Concepts Used
+- useState
+- useEffect
+- useContext
+- useMemo
+- useRef
+- React Router
 
-## React Compiler
+## API
+Product images and videos are fetched using the **Pexels API**.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Purpose
+The goal of this project was to apply React routing, hooks, and component structure in a small real-world style application.
